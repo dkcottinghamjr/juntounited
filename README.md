@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Junto United
 
-## Getting Started
+The intersection of Curiosity, Intelligence, and Ambition.
 
-First, run the development server:
+A static website built with Next.js (App Router), Tailwind CSS, and Framer Motion. Hosted on GitHub Pages.
+
+## Run Locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Add a New Blog Post
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Create a new `.md` file in `/content/posts/`:
 
-## Learn More
+```markdown
+---
+title: "Your Post Title"
+date: "2026-03-15"
+excerpt: "A one or two sentence summary that appears on the card."
+---
 
-To learn more about Next.js, take a look at the following resources:
+Your markdown content here.
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Push to `main`. The post will appear automatically on the Conversation page.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The filename becomes the URL slug. For example, `my-new-post.md` becomes `/conversation/my-new-post`.
 
-## Deploy on Vercel
+## Add a New Project Card
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Edit `/content/projects.ts` and add an entry to the `projects` array:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```ts
+{
+  slug: 'your-project',
+  name: 'Your Project',
+  description: 'A 2-3 sentence description of the project.',
+  status: 'Active',       // 'Active' | 'In Development' | 'Coming Soon'
+  cta: 'Learn More',
+}
+```
+
+## Deploy
+
+Push to `main` — GitHub Actions builds the site and deploys it automatically.
+
+The workflow (`.github/workflows/deploy.yml`) runs `npm run build` and deploys the `/out` directory using GitHub Pages.
+
+## Connect a Custom Domain
+
+1. Go to your repo's **Settings > Pages**
+2. Under **Custom domain**, enter your domain (e.g., `juntounited.com`)
+3. Configure your DNS provider:
+   - For an apex domain: add `A` records pointing to GitHub Pages IPs:
+     ```
+     185.199.108.153
+     185.199.109.153
+     185.199.110.153
+     185.199.111.153
+     ```
+   - For a subdomain (e.g., `www`): add a `CNAME` record pointing to `<username>.github.io`
+4. Check **Enforce HTTPS** once DNS propagates
+
+GitHub will automatically create a `CNAME` file in the deployment. For more details, see the [GitHub Pages custom domain docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
+
+## Tech Stack
+
+- **Next.js 14** — App Router, static export
+- **Tailwind CSS** — utility-first styling
+- **Framer Motion** — scroll animations
+- **gray-matter + remark** — markdown blog posts at build time
+- **next/font** — Cormorant Garamond + DM Sans, no runtime font API calls
