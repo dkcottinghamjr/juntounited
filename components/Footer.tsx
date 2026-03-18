@@ -24,6 +24,9 @@ export default function Footer() {
             <Link href="/conversation" className="hover:text-charcoal transition-colors">
               Conversation
             </Link>
+            <Link href="/influencers" className="hover:text-charcoal transition-colors">
+              Influencers
+            </Link>
             <Link href="/contact" className="hover:text-charcoal transition-colors">
               Contact
             </Link>
