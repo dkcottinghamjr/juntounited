@@ -34,13 +34,7 @@ export default function HomePage() {
             The intersection of Curiosity, Intelligence, and Ambition.
           </p>
         </FadeIn>
-        <FadeIn delay={0.3}>
-          <p className="text-base text-charcoal/40 max-w-lg leading-relaxed text-balance">
-            We build technology and publish thinking at the edge of human
-            behavior, decision science, and what it means to perform at the
-            highest level.
-          </p>
-        </FadeIn>
+
       </section>
 
       {/* Pillars */}

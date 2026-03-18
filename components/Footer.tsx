@@ -27,12 +27,6 @@ export default function Footer() {
             <Link href="/contact" className="hover:text-charcoal transition-colors">
               Contact
             </Link>
-            <a
-              href="mailto:hello@juntounited.com"
-              className="hover:text-charcoal transition-colors"
-            >
-              hello@juntounited.com
-            </a>
           </div>
         </div>
 

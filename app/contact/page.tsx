@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import FadeIn from '@/components/FadeIn'
+import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -54,15 +55,10 @@ export default function ContactPage() {
 
       <FadeIn delay={0.15}>
         <div className="bg-white/60 rounded-xl p-8 md:p-10 shadow-card mb-10">
-          <h2 className="font-display text-2xl font-semibold text-charcoal mb-2">
-            Email
+          <h2 className="font-display text-2xl font-semibold text-charcoal mb-6">
+            Send us a message
           </h2>
-          <a
-            href="mailto:hello@juntounited.com"
-            className="text-terracotta hover:text-terracotta-dark transition-colors text-lg"
-          >
-            hello@juntounited.com
-          </a>
+          <ContactForm />
         </div>
       </FadeIn>
 
