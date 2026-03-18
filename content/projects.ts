@@ -11,23 +11,31 @@ export const projects: Project[] = [
     slug: 'pickup',
     name: 'Pickup',
     description:
-      'A social sports matchmaking app connecting players to pickup games in their city. Find a game, show up, play. No leagues, no commitments — just sport when you want it, with people who take it seriously.',
+      'A social sports matchmaking app connecting players to games nationwide.',
     status: 'In Development',
     cta: 'Join the Waitlist',
   },
   {
-    slug: 'the-daily-brief',
-    name: 'The Daily Brief',
+    slug: 'leash',
+    name: 'Leash',
     description:
-      'AI-powered daily execution coaching for high-performance professionals. A concise, personalized briefing each morning that cuts through the noise and keeps you locked in on what actually moves the needle.',
+      'AI-powered execution coaching for high-performance professionals. Do not let the day get away from you.',
     status: 'Active',
     cta: 'Learn More',
   },
   {
-    slug: 'decision-framework',
-    name: 'Decision Framework',
+    slug: 'decide',
+    name: 'Decide',
     description:
-      'A web application built around a six-model decision system — Expected Value, Bayesian Updating, Kelly Criterion, and related frameworks. Designed for anyone who refuses to leave important decisions to gut instinct alone.',
+      'An application built around 6 mathmatical models of decision making to remove folly inherent in human nature. Designed for anyone who refuses to leave important decisions to gut instinct alone.',
+    status: 'Coming Soon',
+    cta: 'Get Notified',
+  },
+  {
+    slug: 'barnabas',
+    name: 'Barnabas',
+    description:
+      'A companion for your spiritual journey.',
     status: 'Coming Soon',
     cta: 'Get Notified',
   },
