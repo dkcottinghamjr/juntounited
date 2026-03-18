@@ -22,8 +22,7 @@ export default function ConversationPage() {
           What we&apos;re thinking
         </h1>
         <p className="text-charcoal/50 text-lg max-w-xl mb-16 leading-relaxed">
-          Writing on technology, human behavior, ambition, and the decisions
-          that shape the future.
+          Writing on the world.
         </p>
       </FadeIn>
 

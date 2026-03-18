@@ -24,8 +24,7 @@ export default function ProjectsPage() {
           What we&apos;re building
         </h1>
         <p className="text-charcoal/50 text-lg max-w-xl mb-16 leading-relaxed">
-          Products and tools at the intersection of technology, human behavior,
-          and high-performance thinking.
+          Leveraging technology to solve problems.
         </p>
       </FadeIn>
 

@@ -20,7 +20,7 @@ export const projects: Project[] = [
     name: 'Leash',
     description:
       'AI-powered execution coaching for high-performance professionals. Do not let the day get away from you.',
-    status: 'Active',
+    status: 'In Development',
     cta: 'Learn More',
   },
   {
