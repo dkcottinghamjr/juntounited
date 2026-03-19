@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "barnabas",
+    "name": "Barnabas",
+    "description": "A companion for your spiritual journey.",
+    "status": "Coming Soon",
+    "cta": "Get Notified",
+    "ctaLink": ""
+  },
+  {
+    "slug": "pickup",
+    "name": "Pickup",
+    "description": "A social sports matchmaking app connecting players to games nationwide.",
+    "status": "Coming Soon",
+    "cta": "Join the Waitlist",
+    "ctaLink": ""
+  },
+  {
+    "slug": "birds-of-prey",
+    "name": "Birds of Prey",
+    "description": "Shaping innovation in residential real estate and home services.",
+    "status": "Active",
+    "cta": "Connect",
+    "ctaLink": "https://www.linkedin.com/in/danielcottingham/"
+  },
+  {
+    "slug": "the-same-humans",
+    "name": "The Same Humans",
+    "description": "A research project exploring how human nature reveals itself during technological revolutions. ",
+    "status": "Active",
+    "cta": "Explore the study",
+    "ctaLink": "https://dkcottinghamjr.github.io/samehumans/"
+  },
+  {
+    "slug": "leash",
+    "name": "Leash",
+    "description": "AI-powered execution coaching for high-performance professionals. Do not let the day get away from you.",
+    "status": "In Development",
+    "cta": "Learn More",
+    "ctaLink": ""
+  },
+  {
+    "slug": "decide",
+    "name": "Decide",
+    "description": "An application built around 6 mathmatical models of decision making to remove folly inherent in human nature. Designed for anyone who refuses to leave important decisions to gut instinct alone.",
+    "status": "In Development",
+    "cta": "Get Notified",
+    "ctaLink": ""
+  }
+]

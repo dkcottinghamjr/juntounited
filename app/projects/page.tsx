@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { projects } from '@/content/projects'
+import projectsData from '@/content/projects.json'
 import FadeIn from '@/components/FadeIn'
 
 export const metadata: Metadata = {
@@ -29,7 +29,7 @@ export default function ProjectsPage() {
       </FadeIn>
 
       <div className="space-y-8">
-        {projects.map((project, i) => (
+        {projectsData.map((project, i) => (
           <FadeIn key={project.slug} delay={i * 0.1}>
             <div className="bg-white/60 rounded-xl p-8 md:p-10 shadow-card hover:shadow-card-hover transition-shadow">
               <div className="flex flex-wrap items-center gap-3 mb-4">
@@ -47,9 +47,15 @@ export default function ProjectsPage() {
               <p className="text-charcoal/60 leading-relaxed mb-6">
                 {project.description}
               </p>
-              <button className="text-sm font-semibold text-terracotta hover:text-terracotta-dark transition-colors">
-                {project.cta} &rarr;
-              </button>
+              {project.ctaLink ? (
+                <a href={project.ctaLink} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-terracotta hover:text-terracotta-dark transition-colors">
+                  {project.cta} &rarr;
+                </a>
+              ) : (
+                <span className="text-sm font-semibold text-terracotta/50">
+                  {project.cta} &rarr;
+                </span>
+              )}
             </div>
           </FadeIn>
         ))}

@@ -1,0 +1,122 @@
+{
+  "individuals": [
+    {
+      "name": "Benjamin Franklin",
+      "description": "\"Well done is better than well said.\"",
+      "link": "https://en.wikipedia.org/wiki/The_Autobiography_of_Benjamin_Franklin"
+    },
+    {
+      "name": "Charlie Munger",
+      "description": "\"Show me the incentive, and I'll show you the outcome.\"",
+      "link": "https://en.wikipedia.org/wiki/Poor_Charlie%27s_Almanack"
+    },
+    {
+      "name": "Leonardo da Vinci",
+      "description": "\"Simplicity is the ultimate sophistication.\"",
+      "link": "https://en.wikipedia.org/wiki/Leonardo_da_Vinci"
+    },
+    {
+      "name": "Rick Rubin",
+      "description": "\"The audience comes last.\"",
+      "link": "https://www.thewayofcode.com/"
+    },
+    {
+      "name": "Thomas Edison",
+      "description": "\"I have not failed. I've just found 1,000 ways that won't work.\"",
+      "link": "https://www.invent.org/inductees/thomas-alva-edison"
+    },
+    {
+      "name": "Daniel Kahneman",
+      "description": "\"We can be blind to the obvious, and we are also blind to our blindness.\"",
+      "link": "https://www.nobelprize.org/prizes/economic-sciences/2002/kahneman/facts/"
+    },
+    {
+      "name": "Dean Smith",
+      "description": "“A team is not a group of people who play together. A team is a group of people who trust each other.”",
+      "link": "https://www.unc.edu/posts/2019/03/08/225-years-of-tar-heels-dean-smith/#:~:text=Smith%2C%20who%20died%20in%202015%2C,winningest%20coach%20in%20college%20basketball."
+    },
+    {
+      "name": "Marcus Aurelius",
+      "description": "\"You have power over your mind, not outside events.  Realize this, and you will find strength.\"",
+      "link": "https://www.goodreads.com/work/quotes/31010-meditations"
+    },
+    {
+      "name": "Elon Musk",
+      "description": "\"The best part is no part.\"",
+      "link": "https://x.com/elonmusk"
+    },
+    {
+      "name": "Dave Matthews",
+      "description": "\"Take these chances, place them in a box until a quieter time, lights down you up and die.",
+      "link": "https://www.davematthewsband.com"
+    },
+    {
+      "name": "Danny Meyer",
+      "description": "\"The road to success is paved with mistakes well handled.\"",
+      "link": "https://www.ushg.com/danny-meyer"
+    },
+    {
+      "name": "Sir Edmund Hillary",
+      "description": "\"It is not the mountain we conquer, but ourselves.\"",
+      "link": "https://achievement.org/achiever/sir-edmund-hillary/"
+    },
+    {
+      "name": "Steve Jobs",
+      "description": "\"Your time is limited, so don't waste it living someone else's life.\"",
+      "link": "https://www.apple.com/stevejobs/"
+    },
+    {
+      "name": "Michael Jordan",
+      "description": "\"I have failed over and over and over again in my life.  And that is why I succeed.\"",
+      "link": "https://www.netflix.com/title/80203144"
+    },
+    {
+      "name": "Albert Einstein",
+      "description": "\"Imagination is more important than knowledge.\"",
+      "link": "https://www.atomicarchive.com/resources/documents/beginnings/einstein.html"
+    },
+    {
+      "name": "J.K. Rowling",
+      "description": "\"It is our choices that show what we truly are, far more than our abilities.\"",
+      "link": "https://www.jkrowling.com/"
+    },
+    {
+      "name": "Howard Marks",
+      "description": "\"You can't predict. You can prepare.\"",
+      "link": "https://www.oaktreecapital.com/about/leadership/bio/howard-marks"
+    },
+    {
+      "name": "Ernest Shackleton",
+      "description": "\"Difficulties are just things to overcome, after all.\"",
+      "link": "https://www.ernestshackleton.net/#about"
+    },
+    {
+      "name": "Phil Knight",
+      "description": "\"Just do it.\"",
+      "link": "https://www.nike.com/"
+    },
+    {
+      "name": "Ray Dalio",
+      "description": "\"He who lives by the crystal ball will eat shattered glass.\"",
+      "link": "https://www.principles.com/"
+    }
+  ],
+  "companies": [],
+  "content": [
+    {
+      "name": "Founders",
+      "description": "Podcast - David Senra profiles history's greatest entrepreneurs ",
+      "link": "https://www.founderspodcast.com/"
+    },
+    {
+      "name": "Paul Graham's Essays",
+      "description": "Y Combinator Founder's writings on a variety of topics",
+      "link": "https://paulgraham.com/articles.html"
+    },
+    {
+      "name": "Beastie Boys - License to Ill",
+      "description": "The first rap LP to top the Billboard 200 chart.",
+      "link": "https://open.spotify.com/album/11oR0ZuqB3ucZwb5TGbZxb"
+    }
+  ]
+}
