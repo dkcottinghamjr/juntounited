@@ -81,14 +81,19 @@
       "link": "https://www.jkrowling.com/"
     },
     {
+      "name": "Paul Graham",
+      "description": "\"There's a kind of excited curiosity that's both the engine and the rudder of great work.\"",
+      "link": "https://paulgraham.com/articles.html"
+    },
+    {
+      "name": "Sir Ernest Shackleton",
+      "description": "\"Difficulties are just things to overcome, after all.\"",
+      "link": "https://www.ernestshackleton.net/#about"
+    },
+    {
       "name": "Howard Marks",
       "description": "\"You can't predict. You can prepare.\"",
       "link": "https://www.oaktreecapital.com/about/leadership/bio/howard-marks"
-    },
-    {
-      "name": "Ernest Shackleton",
-      "description": "\"Difficulties are just things to overcome, after all.\"",
-      "link": "https://www.ernestshackleton.net/#about"
     },
     {
       "name": "Phil Knight",
@@ -99,6 +104,11 @@
       "name": "Ray Dalio",
       "description": "\"He who lives by the crystal ball will eat shattered glass.\"",
       "link": "https://www.principles.com/"
+    },
+    {
+      "name": "C.S. Lewis",
+      "description": "\"Humility is not thinking less of yourself, but thinking of yourself less.\"",
+      "link": "https://www.cslewis.org/"
     }
   ],
   "companies": [],
@@ -107,11 +117,6 @@
       "name": "Founders",
       "description": "Podcast - David Senra profiles history's greatest entrepreneurs ",
       "link": "https://www.founderspodcast.com/"
-    },
-    {
-      "name": "Paul Graham's Essays",
-      "description": "Y Combinator Founder's writings on a variety of topics",
-      "link": "https://paulgraham.com/articles.html"
     },
     {
       "name": "Beastie Boys - License to Ill",

@@ -19,6 +19,7 @@ const btnPrimary = 'inline-flex items-center gap-2 rounded-lg bg-charcoal px-6 p
 const btnSmall = 'rounded-md bg-charcoal px-4 py-1.5 text-xs font-semibold text-white hover:bg-charcoal/90 disabled:opacity-50 transition-colors'
 const btnCancel = 'rounded-md border border-sand px-4 py-1.5 text-xs font-medium text-charcoal/60 hover:text-charcoal transition-colors'
 const actionLink = 'text-xs transition-colors ml-2 flex-shrink-0'
+const API = 'http://localhost:3001'
 
 function ArrowUp() {
   return (
@@ -85,9 +86,9 @@ export default function AdminPage() {
   const [convEditStatus, setConvEditStatus] = useState<'idle' | 'saving' | 'error'>('idle')
 
   useEffect(() => {
-    fetch('/api/influencers').then((r) => r.json()).then(setInfluencers)
-    fetch('/api/projects').then((r) => r.json()).then(setProjects)
-    fetch('/api/conversations').then((r) => r.json()).then(setConversations)
+    fetch(API + '/api/influencers').then((r) => r.json()).then(setInfluencers)
+    fetch(API + '/api/projects').then((r) => r.json()).then(setProjects)
+    fetch(API + '/api/conversations').then((r) => r.json()).then(setConversations)
   }, [])
 
   // ════════════════════════════════════════
@@ -105,7 +106,7 @@ export default function AdminPage() {
       category: (form.elements.namedItem('inf-category') as HTMLSelectElement).value,
     }
     try {
-      const res = await fetch('/api/influencers', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+      const res = await fetch(API + '/api/influencers', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
       if (!res.ok) throw new Error()
       setInfluencers((await res.json()).data)
       setInfAddStatus('saved')
@@ -115,12 +116,12 @@ export default function AdminPage() {
   }
 
   async function handleInfDelete(name: string, category: string) {
-    const res = await fetch('/api/influencers', { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, category }) })
+    const res = await fetch(API + '/api/influencers', { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, category }) })
     if (res.ok) { setInfluencers((await res.json()).data); if (infEditing?.name === name) setInfEditing(null) }
   }
 
   async function handleInfMove(category: InfluencerCategory, fromIndex: number, toIndex: number) {
-    const res = await fetch('/api/influencers', { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ category, fromIndex, toIndex }) })
+    const res = await fetch(API + '/api/influencers', { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ category, fromIndex, toIndex }) })
     if (res.ok) {
       setInfluencers((await res.json()).data)
       if (infEditing?.category === category && infEditing.index === fromIndex) setInfEditing({ ...infEditing, index: toIndex })
@@ -131,7 +132,7 @@ export default function AdminPage() {
     if (!infEditing) return
     setInfEditStatus('saving')
     try {
-      const res = await fetch('/api/influencers', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(infEditing) })
+      const res = await fetch(API + '/api/influencers', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(infEditing) })
       if (!res.ok) throw new Error()
       setInfluencers((await res.json()).data)
       setInfEditing(null)
@@ -155,7 +156,7 @@ export default function AdminPage() {
       ctaLink: (form.elements.namedItem('proj-ctaLink') as HTMLInputElement).value,
     }
     try {
-      const res = await fetch('/api/projects', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+      const res = await fetch(API + '/api/projects', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
       if (!res.ok) throw new Error()
       setProjects((await res.json()).data)
       setProjAddStatus('saved')
@@ -165,12 +166,12 @@ export default function AdminPage() {
   }
 
   async function handleProjDelete(index: number) {
-    const res = await fetch('/api/projects', { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ index }) })
+    const res = await fetch(API + '/api/projects', { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ index }) })
     if (res.ok) { setProjects((await res.json()).data); if (projEditing?.index === index) setProjEditing(null) }
   }
 
   async function handleProjMove(fromIndex: number, toIndex: number) {
-    const res = await fetch('/api/projects', { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ fromIndex, toIndex }) })
+    const res = await fetch(API + '/api/projects', { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ fromIndex, toIndex }) })
     if (res.ok) {
       setProjects((await res.json()).data)
       if (projEditing?.index === fromIndex) setProjEditing({ ...projEditing, index: toIndex })
@@ -181,7 +182,7 @@ export default function AdminPage() {
     if (!projEditing) return
     setProjEditStatus('saving')
     try {
-      const res = await fetch('/api/projects', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(projEditing) })
+      const res = await fetch(API + '/api/projects', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(projEditing) })
       if (!res.ok) throw new Error()
       setProjects((await res.json()).data)
       setProjEditing(null)
@@ -204,7 +205,7 @@ export default function AdminPage() {
       content: (form.elements.namedItem('conv-content') as HTMLTextAreaElement).value,
     }
     try {
-      const res = await fetch('/api/conversations', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+      const res = await fetch(API + '/api/conversations', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
       if (!res.ok) throw new Error()
       setConversations((await res.json()).data)
       setConvAddStatus('saved')
@@ -214,7 +215,7 @@ export default function AdminPage() {
   }
 
   async function handleConvDelete(slug: string) {
-    const res = await fetch('/api/conversations', { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ slug }) })
+    const res = await fetch(API + '/api/conversations', { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ slug }) })
     if (res.ok) { setConversations((await res.json()).data); if (convEditing?.slug === slug) setConvEditing(null) }
   }
 
@@ -222,7 +223,7 @@ export default function AdminPage() {
     if (!convEditing) return
     setConvEditStatus('saving')
     try {
-      const res = await fetch('/api/conversations', {
+      const res = await fetch(API + '/api/conversations', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ originalSlug: convEditing.slug, title: convEditing.title, date: convEditing.date, excerpt: convEditing.excerpt, content: convEditing.content }),
@@ -296,7 +297,7 @@ export default function AdminPage() {
                         const isEditing = infEditing?.category === cat && infEditing?.index === index
                         if (isEditing) {
                           return (
-                            <li key={`${cat}-${index}`} className="rounded-lg border-2 border-terracotta/30 bg-white px-4 py-3 space-y-3">
+                            <li key={cat + '-' + index} className="rounded-lg border-2 border-terracotta/30 bg-white px-4 py-3 space-y-3">
                               <div><label className="block text-xs font-medium text-charcoal/50 mb-1">Name</label><input type="text" value={infEditing.name} onChange={(e) => setInfEditing({ ...infEditing, name: e.target.value })} className={inputClass + ' text-sm'} /></div>
                               <div><label className="block text-xs font-medium text-charcoal/50 mb-1">Description</label><input type="text" value={infEditing.description} onChange={(e) => setInfEditing({ ...infEditing, description: e.target.value })} className={inputClass + ' text-sm'} /></div>
                               <div><label className="block text-xs font-medium text-charcoal/50 mb-1">Link</label><input type="url" value={infEditing.link} onChange={(e) => setInfEditing({ ...infEditing, link: e.target.value })} className={inputClass + ' text-sm'} /></div>
@@ -309,14 +310,14 @@ export default function AdminPage() {
                           )
                         }
                         return (
-                          <li key={`${cat}-${index}`} className="flex items-center rounded-lg border border-sand px-4 py-2">
+                          <li key={cat + '-' + index} className="flex items-center rounded-lg border border-sand px-4 py-2">
                             <ReorderButtons index={index} total={influencers[cat].length} onMove={(from, to) => handleInfMove(cat, from, to)} />
                             <div className="min-w-0 flex-1">
                               <span className="text-sm font-medium text-charcoal">{item.name}</span>
                               {item.description && <span className="text-xs text-charcoal/40 ml-2">{item.description}</span>}
                             </div>
-                            <button onClick={() => setInfEditing({ category: cat, index, ...item })} className={`${actionLink} text-charcoal/30 hover:text-terracotta`}>Edit</button>
-                            <button onClick={() => handleInfDelete(item.name, cat)} className={`${actionLink} text-charcoal/30 hover:text-red-600`}>Remove</button>
+                            <button onClick={() => setInfEditing({ category: cat, index, ...item })} className={actionLink + ' text-charcoal/30 hover:text-terracotta'}>Edit</button>
+                            <button onClick={() => handleInfDelete(item.name, cat)} className={actionLink + ' text-charcoal/30 hover:text-red-600'}>Remove</button>
                           </li>
                         )
                       })}
@@ -404,8 +405,8 @@ export default function AdminPage() {
                         <span className="text-sm font-medium text-charcoal">{item.name}</span>
                         <span className="text-xs text-charcoal/30 ml-2">{item.status}</span>
                       </div>
-                      <button onClick={() => setProjEditing({ index, name: item.name, description: item.description, status: item.status, cta: item.cta, ctaLink: item.ctaLink || '' })} className={`${actionLink} text-charcoal/30 hover:text-terracotta`}>Edit</button>
-                      <button onClick={() => handleProjDelete(index)} className={`${actionLink} text-charcoal/30 hover:text-red-600`}>Remove</button>
+                      <button onClick={() => setProjEditing({ index, name: item.name, description: item.description, status: item.status, cta: item.cta, ctaLink: item.ctaLink || '' })} className={actionLink + ' text-charcoal/30 hover:text-terracotta'}>Edit</button>
+                      <button onClick={() => handleProjDelete(index)} className={actionLink + ' text-charcoal/30 hover:text-red-600'}>Remove</button>
                     </li>
                   )
                 })}
@@ -478,8 +479,8 @@ export default function AdminPage() {
                         <span className="text-sm font-medium text-charcoal">{item.title}</span>
                         <span className="text-xs text-charcoal/30 ml-2">{item.date}</span>
                       </div>
-                      <button onClick={() => setConvEditing({ ...item })} className={`${actionLink} text-charcoal/30 hover:text-terracotta`}>Edit</button>
-                      <button onClick={() => handleConvDelete(item.slug)} className={`${actionLink} text-charcoal/30 hover:text-red-600`}>Remove</button>
+                      <button onClick={() => setConvEditing({ ...item })} className={actionLink + ' text-charcoal/30 hover:text-terracotta'}>Edit</button>
+                      <button onClick={() => handleConvDelete(item.slug)} className={actionLink + ' text-charcoal/30 hover:text-red-600'}>Remove</button>
                     </li>
                   )
                 })}
